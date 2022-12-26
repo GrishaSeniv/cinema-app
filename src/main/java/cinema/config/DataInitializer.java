@@ -8,7 +8,7 @@ import java.util.Set;
 import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class DataInitializer {
     private RoleService roleService;
     private UserService userService;
