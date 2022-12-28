@@ -10,7 +10,9 @@ Project was built according to SOLID principles:
 
 It uses JSON format for request and response. Also, it supports basic authentication. 
 ## 🎯 Features
-    Guest:
+
+
+    GUEST:
 + POST - /register - registration with USER(default) role
 + POST - /login - authentication like a user(with USER, ADMIN, or USER/ADMIN roles)
 
