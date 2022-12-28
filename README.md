@@ -2,16 +2,13 @@
 
 ## Project description
 
-A REST web-application that supports authentication, registration and other CRUD operations using MySQL as a database. 
-It's based on the following technologies as: Hibernate framework, Spring Security and Spring MVC modules. 
+A REST web-application that supports authentication, registration and other CRUD operations using MySQL as a database.
 Project was built according to SOLID principles: 
 1) The  Dependency Inversion principle is achieved using  interfaces;
 2) The Single Responsibility principle is achieved using mappers.
 
 It uses JSON format for request and response. Also, it supports basic authentication. 
 ## 🎯 Features
-
-
     GUEST:
 + POST - /register - registration with USER(default) role
 + POST - /login - authentication like a user(with USER, ADMIN, or USER/ADMIN roles)
