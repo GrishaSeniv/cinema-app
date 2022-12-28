@@ -31,10 +31,5 @@ public class DataInitializer {
         user.setPassword("admin123");
         user.setRoles(Set.of(adminRole));
         userService.add(user);
-        User roman = new User();
-        roman.setEmail("roma228@gmail.com");
-        roman.setPassword("qwerty123");
-        roman.setRoles(Set.of(adminRole, userRole));
-        userService.add(roman);
     }
 }

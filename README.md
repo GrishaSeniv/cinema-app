@@ -4,12 +4,15 @@
 
 A REST web-application that supports authentication, registration and other CRUD operations using MySQL as a database. 
 It's based on the following technologies as: Hibernate framework, Spring Security and Spring MVC modules. 
-Project was built according to SOLID principles, and using 3-tier architecture(controllers -> services -> DAO).
+Project was built according to SOLID principles: 
+1) The  Dependency Inversion principle is achieved using  interfaces;
+2) The Single Responsibility principle is achieved using mappers.
+
 It uses JSON format for request and response. Also, it supports basic authentication. 
 ## 🎯 Features
-
-+ POST - registration with USER(default) role
-+ POST - authentication like a user(with USER, ADMIN, or USER/ADMIN roles)
+    Guest:
++ POST - /register - registration with USER(default) role
++ POST - /login - authentication like a user(with USER, ADMIN, or USER/ADMIN roles)
 
 
     ADMIN:
@@ -25,7 +28,10 @@ It uses JSON format for request and response. Also, it supports basic authentica
 + PUT - /shopping-carts/movie-sessions
 ## Project structure
 
-![alt text](blob/project_structure.JPG)
+Project was built according to 3-tier architecture - the presentation tier; the application tier, where data is processed; and the data tier, where the data associated with the application is stored and managed: 
+- Controllers - Presentation tier
+- Services - Application tier
+- DAO - Data tier
 
 The model level is represented in the following diagram:
 
@@ -46,10 +52,11 @@ The model level is represented in the following diagram:
 - Clone this project from GitHub;
 - Install [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/);
 - Install [Apache Tomcat v.9.x.x](https://tomcat.apache.org/download-90.cgi) ;
-- Change URL, username, password and JDBC driver in cinema-app\src\main\java\cinema\resources\db.properties;
+- Change URL, username, password and JDBC driver in [db.properties](src/main/resources/db.properties);
 - Configure Tomcat server:
     1. Edit configuration;
     2. Tomcat Server -> Local
     3. Deployment -> add -> artifact -> cinema-app:war exploded
     4. Application context : /
     5. Press apply -> okay.
+- A default user with ADMIN role is created in [DataInitializer](src/main/java/cinema/config/DataInitializer.java) when the project starts
